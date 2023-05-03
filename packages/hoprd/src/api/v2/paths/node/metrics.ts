@@ -1,8 +1,9 @@
 import type { Operation } from 'express-openapi'
 import { STATUS_CODES } from '../../utils.js'
 import { getHeapStatistics } from 'v8'
-import { create_gauge, gather_all_metrics, merge_encoded_metrics, getMetricsCollectors } from '@hoprnet/hopr-utils'
-import { log } from 'debug'
+import { create_gauge, gather_all_metrics, merge_encoded_metrics, getMetricsCollectors, debug } from '@hoprnet/hopr-utils'
+
+const log = debug('hopr-metrics')
 
 // Metrics
 const metric_totalAllocHeap = create_gauge(

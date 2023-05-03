@@ -15,10 +15,10 @@
       "args": [
         "--init",
         "--api",
-        "--password='^binary6wire6GLEEMAN9urbanebetween1watch^'",
+        "--password='switzerland",
         "--disableApiAuthentication",
         "--data=/tmp/debug",
-        "--identity=debug-identity",
+        "--identity=./debug-identity",
         "--environment=master-staging"
       ],
       "env": {
