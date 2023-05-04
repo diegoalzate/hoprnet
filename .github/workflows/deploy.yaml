@@ -48,7 +48,7 @@ jobs:
           fetch-depth: 0
 
       - name: "[SETUP] Configure Git info"
-        run: cat .dockerignore
+        run: docker build --progress plain -t hoprd-local:latest --build-arg=HOPR_TOOLCHAIN_IMAGE="${{ secrets.GOOGLE_HOPRASSOCIATION_PROJECT }}/hopr-toolchain:latest" -f packages/hoprd/Dockerfile .
 
       - name: "[SETUP] Configure Git info"
         run: ./scripts/configure-git-info.sh
