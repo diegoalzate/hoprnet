@@ -126,7 +126,6 @@ build_and_tag_images() {
     log "Waiting for Docker builds (part 3) to finish"
     wait
   else
-    cat .dockerignore
     gcloud builds submit --config cloudbuild.yaml \
       --verbosity=info \
       --substitutions=_PACKAGE_VERSION="${package_version}",_IMAGE_VERSION="${image_version}",_RELEASES="${releases}",_NO_TAGS="${no_tags:-}"

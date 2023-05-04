@@ -48,6 +48,9 @@ jobs:
           fetch-depth: 0
 
       - name: "[SETUP] Configure Git info"
+        run: cat .dockerignore
+
+      - name: "[SETUP] Configure Git info"
         run: ./scripts/configure-git-info.sh
 
       - name: Disable sccache (act-only)
@@ -71,7 +74,7 @@ jobs:
         if: ${{ !env.ACT }}
         with:
           name: hoprnet
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
         continue-on-error: true
 
       - name: get yarn cache directory path
@@ -203,7 +206,7 @@ jobs:
         if: ${{ !env.ACT }}
         with:
           name: hoprnet
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
         continue-on-error: true
 
       - name: Set up Google Cloud Credentials
@@ -267,7 +270,7 @@ jobs:
         if: ${{ !env.ACT }}
         with:
           name: hoprnet
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
         continue-on-error: true
 
       - name: get yarn cache directory path
@@ -392,7 +395,7 @@ jobs:
         if: ${{ !env.ACT }}
         with:
           name: hoprnet
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
 
       - name: get yarn cache directory path
         id: yarn-cache-dir-path
@@ -517,7 +520,7 @@ jobs:
         if: ${{ !env.ACT }}
         with:
           name: hoprnet
-          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
         continue-on-error: true
 
       - name: get yarn cache directory path
