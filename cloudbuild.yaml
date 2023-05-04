@@ -15,7 +15,7 @@ steps:
       - --build-arg=HOPR_TOOLCHAIN_IMAGE=gcr.io/${PROJECT_ID}/hopr-toolchain:${_IMAGE_VERSION}
       - --dockerfile=packages/hoprd/Dockerfile
       - --destination=gcr.io/${PROJECT_ID}/hoprd:${_IMAGE_VERSION}
-      - --cache=false
+      - --cache=true
       - --cache-ttl=96h
     timeout: 1200s
     waitFor:
