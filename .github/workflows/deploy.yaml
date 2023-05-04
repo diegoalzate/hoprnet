@@ -47,7 +47,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: "[SETUP] Configure Git info"
+      - name: Set up Google Cloud Credentials
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GOOGLE_HOPRASSOCIATION_CREDENTIALS_REGISTRY }}
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          project_id: ${{ secrets.GOOGLE_HOPRASSOCIATION_PROJECT }}
+          install_components: beta
+
+      - name: "Testing"
         run: docker build --progress plain -t hoprd-local:latest --build-arg=HOPR_TOOLCHAIN_IMAGE="${{ secrets.GOOGLE_HOPRASSOCIATION_PROJECT }}/hopr-toolchain:latest" -f packages/hoprd/Dockerfile .
 
       - name: "[SETUP] Configure Git info"
