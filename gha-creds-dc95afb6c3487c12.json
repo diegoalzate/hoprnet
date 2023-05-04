@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hoprassociation",
+  "private_key_id": "1d5a350b1a9ea3c08ef28687ab4eb5afd9804fcd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDTSCYfMXjXA3wv\nhL4KlKTr5QZ+9CLEGq6HirynvjrH3WXXI+SJiAm3uM15hvu7CfkwEXCVKux8AzJ4\nkZK4P70GILFJPOHZ6m19ZVg5SVGVsw2NavFxQV5fpaFByknbvJpIMKj3fspc+UY9\nDE9+P+RcrzhNbRdNa8OB353FgLTm3EDmzhA+SaZ8I2yQksGAL2v9ukySqg+CIVGa\nhiCu8WYmgayqE5tWj0LLXQcqyGczzirYr9lo0oB44wBXzsg56bo0AOcxlS8bNCrW\nv9iVyckqpWnOlZ2kO/AESdSXPMu7XquzUQBYwZgSCRdjRMB+uCsa8JOGQZu3Yv8G\nBSD3D+rNAgMBAAECggEAHS+kcymqh4qH31PnIV9gRY/j16oSRWRpg01zJc7oSs9h\nhUMu4PVwYOHqoc+M5aJekGPQWWLOZovV2dmY2tKUjOH7ljeOpsOKBXOi/iLhM3Ht\nEiyEQYC7WzDDomrMd3TJxpAmPy4oy910H58cOhSfD1NLI/LzxZz4gG/WA8BK/Rrj\n8cQ1vvnVrrW12NSAbLlu5FfoX04DLPSRhL0RIxm7gho2C3W2eeY9YtyMeMjcKYnL\n4lwtmMR8sAK51RMyYh+Nlvb7JbtDCdSJU8/e7NSqnYOOCf3V5MuvDopnfbIHExrz\nENSVX1Wb8fSsCDAbf5aKsFLTBJm2Qa4GRkwDW12s9wKBgQDy3ZBCeXFP8tI6rJMF\nEZZxQBGeiMGSkIiAN07Za6ojkzc9HC8AuZIGjjswJgdSrZB9ibQkVdcTMmqObSa0\nGVa/wAE7mDjHwcAeulqIdl4BM+HH0/R0lkkgTjyBFDOBEuDCqCN2ACSMC7f2JTGk\nYg0bKJiriNsu4wIhGiEZMnw3twKBgQDetVB/36K4OCs1EhhsqOja6CWKwbNLS1QP\n6hK5Uwq/gT5bbhjhmbjFubD2FM+lAE5i65/GJVO71aylEQ+nux3bVCDKFeR4vMe/\nqGfbH7+SwnXYRmg2gsUHm/U0Z2Y6Ir0zIcgNQ23z1hO7BNi/2fhZyZcvozGDQbNF\n8eVxz8FJmwKBgQCxMga2+XQ7KKdKN+9sm1BwgJZaXN0e2mU9Zx0YdP1Fx3teEtoY\nZUyti8iTcKuXHxt0/Kt6d0bcssQb9ndun64zaRt9J6sF088gnEbBmdssdXYeHf8V\nsTDZaTur0dliKyvh2ltFFQWVSFeIN8robMGzNwNs5AVHSEmdbTsI71TCMQKBgH/g\nvqNeRzHeVrj3dfzWlDY2PHBLPudKDq/AqRWu4CoMTUD0m+bWfKlUMY9rbbuBzICy\naSC+iDD/xU1W2ZVnNQKecOF45qKJS2z6hv/kX/0mGcKg0vAR8I6o94gqoyFYlykI\nCbXL9ROg5d1qMAchYqAzx9L7ss96ZzUPa78JGyRnAoGAH3o29ZFmwPdZRz8KdxIC\n6LPtpoHxd7kfkSOihn6w1X4m96Avs/b4bfn7ShND8afQh+Pgsjj0Fz1/29ivNt2z\nilb5PCLmNb13C62+sqVSjPT285szGWG/GtgViy+4frnoT9c2sJpCh7bvhkRWrMkg\nOcXUSw+j2JhWuvtnoFFHSoM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "docker-builder@hoprassociation.iam.gserviceaccount.com",
+  "client_id": "116096128543592188441",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/docker-builder%40hoprassociation.iam.gserviceaccount.com"
+}
