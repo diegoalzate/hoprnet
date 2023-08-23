@@ -220,7 +220,6 @@ export class Hopr extends EventEmitter {
   private index_updater: WasmIndexerInteractions
   private pubKey: PublicKey
   private id: PeerId
-  private knownPublicNodesCache = new Set()
   private main_loop: Promise<void>
 
   public network: ResolvedNetwork
@@ -302,15 +301,13 @@ export class Hopr extends EventEmitter {
     verbose('Waiting for indexer to find connected nodes.')
 
     // Add us as public node if announced
-    if (this.options.announce) {
-      this.knownPublicNodesCache.add(this.id)
+    if (! this.options.announce) {
+      throw new Error('Announce option should be turned ON in Providence, only public nodes are supported')
     }
 
     // Fetch previous announcements from database
     const initialNodes = __initialNodes ?? (await connector.waitForPublicNodes())
-
-    // Add all initial public nodes to public nodes cache
-    initialNodes.forEach((initialNode) => this.knownPublicNodesCache.add(initialNode.id.toString()))
+    log("Using initial nodes: " + initialNodes)
 
     // Fetch all nodes that announce themselves during startup
     const recentlyAnnouncedNodes: PeerStoreAddress[] = []
@@ -347,11 +344,13 @@ export class Hopr extends EventEmitter {
 
     const onReceivedMessage = (msg: Uint8Array) => this.emit('hopr:message', msg)
 
+    log('Linking chain and packet keys')
     this.db.link_chain_and_packet_keys(
       Core_Address.deserialize(this.chainKeypair.to_address().serialize()),
       Core_OffchainPublicKey.deserialize(this.packetKeypair.public().serialize()),
       Snapshot._default())
 
+    log('Constructing the core application and tools')
     let coreApp = new CoreApp(new Core_OffchainKeypair(this.packetKeypair.secret()), this.db.clone(),
       this.options.networkQualityThreshold, heartbeat_cfg, ping_cfg,
       onAcknowledgement, onAcknowledgedTicket, packetCfg, onReceivedMessage,
@@ -433,7 +432,7 @@ export class Hopr extends EventEmitter {
   }
 
   private getLocalInterfaceAddresses(): string[] {
-    let results: string[]
+    let results: string[] = []
     const nets = networkInterfaces();
 
     for (const name of Object.keys(nets)) {
@@ -504,6 +503,7 @@ export class Hopr extends EventEmitter {
       addrsToAdd.push(addr.decapsulateCode(CODE_P2P))
     }
 
+    log(`Announcing peer '${peer.id.toString()} with multiaddresses: ${addrsToAdd}'`)
     this.index_updater.announce(peer.id.toString(), addrsToAdd)
   }
 
@@ -1176,6 +1176,7 @@ export class Hopr extends EventEmitter {
 
     let result = []
     let current: AcknowledgedTicket | undefined
+
     while (true) {
       current = ackedTickets.next()
 
